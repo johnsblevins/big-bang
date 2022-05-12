@@ -1,11 +1,12 @@
-# read ironbankusername
-# read ironbankpassword
-# read repousername
-# read repopassword
-
+# Run:
+# az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys
+# az aks install-cli
+# az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+# kubectl get nodes
+# Run ./5-deploy.sh -u "IronBank Username" -p "IronBank Password" -x "GitHub Username" -y "GitHub PAT"
 #!/bin/bash
 
-while getopts n:c: option
+while getopts u:p:x:y: option
 do 
     case "${option}"
         in
@@ -29,6 +30,7 @@ kubectl create namespace flux-system
  # Flux needs the Git credentials to access your Git repository holding your environment
 # Adding a space before this command keeps our PAT out of our history
  kubectl create secret generic private-git --from-literal=username=$repousername --from-literal=password=$repopassword -n bigbang
+
 
 # Flux is used to sync Git with the the cluster configuration
 # If you are using a different version of Big Bang, make sure to update the `?ref=1.33.0` to the correct tag or branch.
