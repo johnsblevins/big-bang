@@ -10,9 +10,9 @@ metadata:
   namespace: bigbang
 spec:
   interval: 1m
-  url: https://github.com/johnsblevins/big-bang.git
+  url: https://replace-with-your-git-repo.git
   ref:
-    branch: template-demo
+    branch: replace-with-your-branch
   secretRef:
     name: private-git
 ---
