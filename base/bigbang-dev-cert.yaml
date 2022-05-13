@@ -5,6 +5,10 @@ metadata:
 stringData:
   # TLS key pair for *.bigbang.dev is used as an example for demo purposes
   values.yaml: |-
+    registryCredentials:
+    - registry: registry1.dso.mil
+      username: IRONBANK_USER
+      password: IRONBANK_PASSWORD
     istio:
       gateways:
         public:

@@ -1,3 +1,8 @@
+# Use
+# ./1-create-gpg-keys.sh
+
+gpg --delete-secret-keys bigbang-dev-environment
+gpg --delete-keys bigbang-dev-environment
 gpg --batch --full-generate-key --rfc4880 --digest-algo sha512 --cert-digest-algo sha512 <<EOF
     %no-protection
     # %no-protection: means the private key won't be password protected
@@ -21,6 +26,8 @@ gpg --quick-set-expire ${fp} 1y
 # cd to the location of the .sops.yaml, then run the following to set the encryption key
 # sed: stream editor is like a cli version of find and replace
 # This ensures your secrets are only decryptable by your key
+
+cp .sops.yaml.original .sops.yaml
 
 ## On linux
 sed -i "s/pgp: FALSE_KEY_HERE/pgp: ${fp}/" .sops.yaml
