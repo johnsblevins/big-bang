@@ -7,11 +7,11 @@ domain: bigbang.dev
 #       type: "NodePort"
 #       nodePortBase: 30000
 
-istio:
-  enabled: true
-
-istiooperator:
-  enabled: true
+#istio:
+#  enabled: true
+#
+#istiooperator:
+#  enabled: true
 
 flux:
   interval: 1m
