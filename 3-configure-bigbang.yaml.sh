@@ -15,8 +15,8 @@ cd dev
 
 # Encrypt the existing certificate
 cp bigbang.yaml.original bigbang.yaml
-sed -i "s#REPO_URL#${repourl}#" bigbang.yaml
-sed -i "s#REPO_BRANCH#$repobranch#" bigbang.yaml
+sed -i "s#url: https://replace-with-your-git-repo.git#url: ${repourl}#" bigbang.yaml
+sed -i "s#branch: replace-with-your-branch#branch: $repobranch#" bigbang.yaml
 
 git add bigbang.yaml
 git commit -m "chore: updated git repo"
