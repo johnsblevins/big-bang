@@ -4,7 +4,7 @@
 # az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 # kubectl get nodes
 # kubectl debug node/aks-nodepool1-12345678-vmss000000 -it --image=alpine
-# Run ./5-deploy.sh -u "IronBank Username" -p "IronBank Password" -x "GitHub Username" -y "GitHub PAT"
+# Run ./4-deploy.sh -u "IronBank Username" -p "IronBank Password" -x "GitHub Username" -y "GitHub PAT"
 #!/bin/bashexit
 
 while getopts u:p:x:y: option
