@@ -10,7 +10,7 @@ metadata:
   namespace: bigbang
 spec:
   interval: 1m
-  : {repourl}
+  url: https://github.com/johnsblevins/big-bang.git
   ref:
     template-demo
   secretRef:
