@@ -10,9 +10,9 @@ metadata:
   namespace: bigbang
 spec:
   interval: 1m
-  url: https://replace-with-your-git-repo.git
+  : {repourl}
   ref:
-    branch: replace-with-your-branch
+    template-demo
   secretRef:
     name: private-git
 ---
