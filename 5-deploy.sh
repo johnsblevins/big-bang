@@ -3,8 +3,9 @@
 # az aks install-cli
 # az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 # kubectl get nodes
+# kubectl debug node/aks-nodepool1-12345678-vmss000000 -it --image=alpine
 # Run ./5-deploy.sh -u "IronBank Username" -p "IronBank Password" -x "GitHub Username" -y "GitHub PAT"
-#!/bin/bash
+#!/bin/bashexit
 
 while getopts u:p:x:y: option
 do 
@@ -39,7 +40,7 @@ kustomize build https://repo1.dso.mil/platform-one/big-bang/bigbang.git//base/fl
 # Wait for flux to complete
 kubectl get deploy -o name -n flux-system | xargs -n1 -t kubectl rollout status -n flux-system
 
-kubectl apply -f bigbang.yaml
+kubectl apply -f dev/bigbang.yaml
 
 # Verify 'bigbang' namespace is created
 kubectl get namespaces
