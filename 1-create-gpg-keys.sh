@@ -33,7 +33,7 @@ cp .sops.yaml.original .sops.yaml
 sed -i "s/pgp: FALSE_KEY_HERE/pgp: ${fp}/" .sops.yaml
 
 ## On MacOS
-sed -i "" "s/pgp: FALSE_KEY_HERE/pgp: ${fp}/" .sops.yaml
+# sed -i "" "s/pgp: FALSE_KEY_HERE/pgp: ${fp}/" .sops.yaml
 
 # Save encrypted secrets into Git
 # Configuration changes must be stored in Git to take affect
